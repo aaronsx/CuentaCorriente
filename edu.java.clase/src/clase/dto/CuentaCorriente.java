@@ -11,7 +11,6 @@ public class CuentaCorriente
 	String contraseña;
 	boolean comprobar;
 	double saldoCuenta;
-	int menu;
 	ArrayList<String> CuentaBanc = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
 	//METODOS
@@ -21,82 +20,52 @@ public class CuentaCorriente
 		
 		return CuentaBanc;
 	}
-	public void CuentaInicio ()
+	public bool CuentaInicio ()
 	{
+		char siquierecuenta;
 		do
 		{
 			comprobar=true;
-			System.out.println("Introduce la contraseña");
-			contraseña=sc.next();
-			if(!ExisteCuenta(contraseña, CuentaBanc))
+			System.out.println("Introduce una cuenta:");
+			dni=sc.next();
+			if(ExisteCuenta(dni, CuentaBanc))
 			{
-				System.out.println("Contraseña incorrecta vuelve a intentarlo");
-				comprobar=false;
+				System.out.println("");
+				
+				
 			}
 			else
 			{
+				comprobar=true;
+				System.out.println("Usted no tiene una cuenta quieres abrirla? pulse y para si y n para no");
+				siquierecuenta=sc.next().charAt(0);
+				
+				switch(siquierecuenta)
+				{
+				case 'y' : case 'Y':
+					crearCuenta(CuentaBanc);
+					break;
+				case 'n' : case 'N':
+					System.out.println("Vale, no quieres cuenta? pues te quedas sin movil");
+					break;
+					default:
+						System.out.println("introduce y=YES n=NO");
+						comprobar=false;
+				}
+				
 				
 			}
+
 		}while(!comprobar);
-		System.out.println("Introduce una cuenta:");
-		dni=sc.next();
-		if(ExisteCuenta(dni, CuentaBanc))
-		{
 			
-		}
-		else
-			crearCuenta(CuentaBanc);
 	}
+	
 	
 	public void ingresarDinero (String dni, ArrayList<String> CuentaBanc)
 	{
 		
 	}
-	public void MenuCuenta (String dni, ArrayList<String> CuentaBanc)
-	{
-		 System.out.println("\n\n\t\t╔══════════════════════════════════════╗");
-		 System.out.println("\t\t║ Buenas que interacion deseas realizar║");
-		 System.out.println("\t\t╠══════════════════════════════════════╣");
-		 System.out.println("\t\t║                                      ║");
-		 System.out.println("\t\t║         1) Sacar Dinero              ║");
-		 System.out.println("\t\t║                                      ║");
-		 System.out.println("\t\t║         2) Ingresar Dinero           ║");
-		 System.out.println("\t\t║                                      ║");
-		 System.out.println("\t\t║         3) Mostrar informacion       ║");
-		 System.out.println("\t\t║______________________________________║");
-		 System.out.println("\t\t║                                      ║");
-		 System.out.println("\t\t║            0) Salir                  ║");
-		 System.out.println("\t\t╚══════════════════════════════════════╝");
-		 
-		 
-		 
-		 do
-			{
-				comprobar=true;
-				menu=sc.nextInt();
-				 switch (menu)
-		         {
-		             case 1:
-		            	 sacarDinero(dni,CuentaBanc);
-		                 break;
-
-		             case 2:
-		            	 ingresarDinero();
-		                 break;
-
-		             case 3:
-		            	 mostrarInformación(dni,CuentaBanc);
-		                 break;
-
-		             default:
-		            	 System.out.println("Porfavor introduce un numero del menu");
-		            	 comprobar=false;
-		         }
-			}while(!comprobar);
-		 
-		 
-		
-	}
+	
 	public void mostrarInformación (String dni, ArrayList<String> CuentaBanc)
 	{
 		
