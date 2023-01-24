@@ -20,7 +20,7 @@ public class CuentaCorriente
 		
 		return CuentaBanc;
 	}
-	public bool CuentaInicio ()
+	 public void CuentaInicio ()
 	{
 		char siquierecuenta;
 		do

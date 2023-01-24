@@ -7,7 +7,10 @@ public class Cuenta {
 
 	public static void main(String[] args) 
 	{
-		CuentaCorriente.
+	
+		cuentaCorriente.CuentaInicio();
+		
+		
 
 	}
 	public void MenuCuenta (String dni, ArrayList<String> CuentaBanc)
