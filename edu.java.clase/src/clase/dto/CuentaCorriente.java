@@ -5,22 +5,27 @@ public class CuentaCorriente
 {
 	//CONSTRUCTORES
 	
-	//ATRIBUTOS
-	String dni;
-	String nombreTitular;
-	String contraseña;
-	boolean comprobar;
-	double saldoCuenta;
+	//Atributos
+	private String dni;
+	private String nombreTitular;
+	private boolean comprobar;
+	private double saldoCuenta;
+	//Getters y Setters
+	/*
+	 * Se utiliza para que software externo a la clase pueda tener acceso a los atributos.
+	 * */
+	
 	ArrayList<String> CuentaBanc = new ArrayList<>();
+	
 	Scanner sc = new Scanner(System.in);
-	//METODOS
-	public ArrayList<String> crearCuenta (ArrayList<String> CuentaBanc)
+	//Metodos
+	private ArrayList<String> crearCuenta (ArrayList<String> CuentaBanc)
 	{
-		double saldo=0.0;
+		
 		
 		return CuentaBanc;
 	}
-	 public void CuentaInicio ()
+	private void CuentaInicio ()
 	{
 		char siquierecuenta;
 		do
@@ -59,25 +64,22 @@ public class CuentaCorriente
 		}while(!comprobar);
 			
 	}
-	
-	
-	public void ingresarDinero (String dni, ArrayList<String> CuentaBanc)
+	private double ingresarDinero ()
 	{
-		
+		return 0.0;
 	}
-	
-	public void mostrarInformación (String dni, ArrayList<String> CuentaBanc)
+	private ArrayList<CuentaCorriente> mostrarInformación (String dni, ArrayList<String> CuentaBanc)
 	{
-		
+		return null;
 	}
-	public boolean sacarDinero (double sacarDineroCuenta, double saldoCuenta)
+	private boolean sacarDinero (double sacarDineroCuenta, double saldoCuenta, ArrayList<String> CuentaBanc)
 	{
 		if(sacarDineroCuenta>=saldoCuenta)
 			return true;
 		else
 			return false;
 	}
-	public boolean ExisteCuenta (String siTienesCuenta, ArrayList<String> CuentaBanc) 
+	private boolean ExisteCuenta (String siTienesCuenta, ArrayList<String> CuentaBanc) 
 	{
 		if (CuentaBanc.contains(siTienesCuenta))
 			return true;

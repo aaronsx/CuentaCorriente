@@ -8,7 +8,7 @@ public class Cuenta {
 	public static void main(String[] args) 
 	{
 	
-		cuentaCorriente.CuentaInicio();
+		CuentaCorriente.CuentaInicio();
 		
 		
 
@@ -51,7 +51,8 @@ public class Cuenta {
 		             case 3:
 		            	 CuentaCorriente.mostrarInformación(dni,CuentaBanc);
 		                 break;
-
+		             case 0:
+		                 break;
 		             default:
 		            	 System.out.println("Porfavor introduce un numero del menu");
 		            	 comprobar=false;
