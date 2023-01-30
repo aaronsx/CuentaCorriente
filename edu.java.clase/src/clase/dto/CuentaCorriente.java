@@ -21,8 +21,10 @@ public class CuentaCorriente
 	//Metodos
 	private ArrayList<String> crearCuenta (ArrayList<String> CuentaBanc)
 	{
-		
-		
+		string opcionEntradaDni;
+		string p`copmEmytasaNombre;
+		System.out.println("Introduce el dni del titular: ");
+		opcionEntradaDni=sc.next();
 		return CuentaBanc;
 	}
 	private void CuentaInicio ()
@@ -35,7 +37,7 @@ public class CuentaCorriente
 			dni=sc.next();
 			if(ExisteCuenta(dni, CuentaBanc))
 			{
-				System.out.println("");
+				System.out.println("Introduce su contraseña: ");
 				
 				
 			}

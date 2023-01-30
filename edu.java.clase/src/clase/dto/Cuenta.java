@@ -4,17 +4,40 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Cuenta {
-
+	
 	public static void main(String[] args) 
 	{
-	
-		CuentaCorriente.CuentaInicio();
-		
-		
+			//Inicializar el tipo cuenta
+			CuentaCorriente ccc = new CuentaCorriente();
+			// Lista de cuentas (BD)
+			ArrayList<CuentaCorriente> listaCcc = new ArrayList<>();
+			//Imprimir el menu por consola
+			
+			
+			//crear cuenta listaCcc.add(ccc.crearCuenta());
 
 	}
-	public void MenuCuenta (String dni, ArrayList<String> CuentaBanc)
+	public void menuInicio ()
 	{
+		Scanner sc = new Scanner(System.in);
+		
+		 boolean comprobar;
+		 int menu;
+		 System.out.println("\n\n\t\t╔══════════════════════════════════════╗");
+		 System.out.println("\t\t║ Buenas que interacion deseas realizar║");
+		 System.out.println("\t\t╠══════════════════════════════════════╣");
+		 System.out.println("\t\t║                                      ║");
+		 System.out.println("\t\t║         1) Inicio de sesion          ║");
+		 System.out.println("\t\t║                                      ║");
+		 System.out.println("\t\t║         2) Crear cuenta              ║");
+		 System.out.println("\t\t║______________________________________║");
+		 System.out.println("\t\t║                                      ║");
+		 System.out.println("\t\t║            0) Salir                  ║");
+		 System.out.println("\t\t╚══════════════════════════════════════╝");
+	}
+	public void menuCuenta (String dni, ArrayList<String> CuentaBanc)
+	{
+		CuentaCorriente ccc = new CuentaCorriente();
 		boolean comprobar;
 		int menu;
 		Scanner sc = new Scanner(System.in);
@@ -41,15 +64,18 @@ public class Cuenta {
 				 switch (menu)
 		         {
 		             case 1:
-		            	 CuentaCorriente.sacarDinero(dni,CuentaBanc);
+		            	 ccc.sacarDinero(dni,CuentaBanc);
+		            	 comprobar=false;
 		                 break;
 
 		             case 2:
-		            	 CuentaCorriente.ingresarDinero();
+		            	  double ho=ccc.ingresarDinero();
+		            	  comprobar=false;
 		                 break;
 
 		             case 3:
-		            	 CuentaCorriente.mostrarInformación(dni,CuentaBanc);
+		            	 ccc.mostrarInformación(dni,CuentaBanc);
+		            	 comprobar=false;
 		                 break;
 		             case 0:
 		                 break;
